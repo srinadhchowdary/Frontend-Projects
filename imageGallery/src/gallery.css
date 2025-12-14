@@ -1,0 +1,15 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md-3 {
+  width: 25%;
+  padding: 10px; /* column spacing */
+  box-sizing: border-box;
+}
+
+.col-md-3 img {
+  width: 80%;
+  height: 200px;
+}
