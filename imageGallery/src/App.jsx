@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import axios from 'axios';
 import Gallery from './gallery';
+import './App.css';
 
 const apiKey = "636e1481b4f3c446d26b8eb6ebfe7127";
 const App = () => {
@@ -23,19 +24,25 @@ const App = () => {
    });
   }
   return (
-    <div>
-      <center>
-        <h2>Image Gallery</h2>
-        <form onSubmit={submitHandler}>
+    <div className="app">
+    <h2 className="title">Image Gallery</h2>
 
-          <input size="30" type="text" value={search} onChange={changeHandler} placeholder="Search for images..." /><br /><br />
-          <button type="submit">Search</button>
+   <form className="search-form" onSubmit={submitHandler}>
+      <input
+        type="text"
+        value={search}
+        onChange={changeHandler}
+        placeholder="Search for images..."
+      />
+      <button type="submit">Search</button>
+    </form>
 
-        </form>
-        <br />
-        {data.length>=1?<Gallery data={data}/>:<h4>No images found</h4>}
-      </center>
-    </div>
+    {data.length >= 1 ? (
+      <Gallery data={data} />
+    ) : (
+      <p className="empty-text">No images found</p>
+    )}
+  </div>
   )
 }
 
