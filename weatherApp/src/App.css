@@ -1,0 +1,137 @@
+/* ---------- Global Reset & Best Practices ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- App Layout ---------- */
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
+  background: linear-gradient(180deg, #eef4ff, #f8f9fb);
+}
+
+/* ---------- Weather Card ---------- */
+.weather-card {
+  width: 360px;
+  max-width: 90%;
+  background-color: #e7b4b4;
+  padding: 32px;
+
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  cursor: default;
+}
+
+/* ---------- Search Form ---------- */
+.search-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 15px;
+
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-form input:focus {
+  outline: none;
+  border-color: #fc1808;
+}
+
+.search-form input:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+/* ---------- Button ---------- */
+.search-form button {
+  padding: 10px 14px;
+  font-size: 14px;
+
+  border: none;
+  border-radius: 6px;
+  background-color: #0b0b0b;
+  color: white;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.search-form button:hover:not(:disabled) {
+  background-color: #3b8de0;
+}
+
+.search-form button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.search-form button:disabled {
+  background-color: #9fc7f5;
+  cursor: not-allowed;
+}
+
+/* ---------- Accessible Focus ---------- */
+.search-form button:focus-visible,
+.search-form input:focus-visible {
+  outline: 2px solid #4da3ff;
+  outline-offset: 2px;
+}
+
+/* ---------- Weather Result ---------- */
+.weather-result {
+  margin-top: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* ---------- Temperature ---------- */
+.temperature {
+  font-size: 56px;
+  font-weight: 600;
+  margin: 16px 0 4px;
+  transition: transform 0.3s ease;
+  transform: translateY(0);
+}
+
+/* ---------- City ---------- */
+.city-name {
+  font-size: 18px;
+  color: #666;
+  letter-spacing: 0.3px;
+}
+
+/* ---------- Labels & Messages ---------- */
+.temp-label {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.status-text {
+  font-size: 14px;
+  color: #555;
+  margin-top: 12px;
+}
+
+.error-text {
+  font-size: 14px;
+  color: #d32f2f;
+  margin-top: 12px;
+}
